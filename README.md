@@ -1,1 +1,1 @@
-# sweater_generator
+[![Build Status](https://travis-ci.org/meredithfuhrman/sweater-generator.svg?branch=master)](https://travis-ci.org/meredithfuhrman/sweater-generator) [![Code Climate](https://codeclimate.com/github/meredithfuhrman/sweater-generator.png)](https://codeclimate.com/github/meredithfuhrman/sweater-generator) [![Coverage Status](https://coveralls.io/repos/meredithfuhrman/sweater-generator/badge.png)](https://coveralls.io/r/meredithfuhrman/sweater-generator)

@@ -7,20 +7,15 @@
 
 <div class="yoke">
   <h4> Yoke </h4>
-    <ul><%= @sweater.cast_on(@swatch, @chest) %></ul>
-    <ul><%= @sweater.yoke1(@pattern) %></ul>
-    <ul><%= @sweater.yoke2 %></ul>
-    <ul><%= @sweater.stitch_count1(@swatch, @chest) %></ul>
+    <ul><%= @sweater.cast_on(@swatch, @chest) %> <%= @sweater.yoke1(@pattern) %></ul>
+    <ul><%= @sweater.yoke2 %> <%= @sweater.stitch_count1(@swatch, @chest) %></ul>
     <ul><%= @sweater.increase1(@swatch, @chest) %> <%= @sweater.stitch_count2(@swatch, @chest) %></ul>
     <ul><%= @sweater.work_even1(@chest) %></ul>
-    <ul><%= @sweater.yoke3 %></ul>
-    <ul><%= @sweater.stitch_count3(@swatch, @chest) %></ul>
+    <ul><%= @sweater.yoke3 %> <%= @sweater.stitch_count3(@swatch, @chest) %></ul>
     <ul><%= @sweater.work_even2(@chest) %></ul>
-    <ul><%= @sweater.yoke4 %></ul>
-    <ul><%= @sweater.stitch_count4(@swatch, @chest) %></ul>
+    <ul><%= @sweater.yoke4 %> <%= @sweater.stitch_count4(@swatch, @chest) %></ul>
     <ul><%= @sweater.work_even3(@chest) %></ul>
-    <ul><%= @sweater.yoke5 %></ul>
-    <ul><%= @sweater.stitch_count5(@swatch, @chest) %></ul>
+    <ul><%= @sweater.yoke5 %> <%= @sweater.stitch_count5(@swatch, @chest) %></ul>
     <ul><%= @sweater.work_even4(@chest) %></ul>
     <ul><%= @sweater.increase2(@swatch, @chest) %> <%= @sweater.stitch_count6(@swatch, @chest) %></ul>
 </div>
@@ -51,15 +46,13 @@
   <h4> Sleeves </h4>
     <ul><%= @sweater.sleeves1(@swatch, @chest) %></ul>
     <ul><%= @sweater.sleeves2(@swatch, @chest) %></ul>
-    <ul><%= @sweater.sleeves3 %></ul>
-    <ul><%= @sweater.sleeves4(@swatch, @chest) %></ul>
+    <ul><%= @sweater.sleeves3 %> <%= @sweater.sleeves4(@swatch, @chest) %></ul>
     <ul><%= @sweater.sleeves5 %></ul>
 </div>
 
 <div class="taper_sleeves">
   <h4> Taper Sleeves </h4>
-    <ul><%= @sweater.taper_sleeves1(@swatch, @chest) %></ul>
-    <ul><%= @sweater.taper_sleeves2(@swatch, @chest) %></ul>
+    <ul><%= @sweater.taper_sleeves1(@swatch, @chest) %> <%= @sweater.taper_sleeves2(@swatch, @chest) %></ul>
     <ul><%= @sweater.taper_sleeves3(@swatch, @chest) %></ul>
     <ul><%= @sweater.taper_sleeves4(@swatch, @chest) %></ul>
     <ul><%= @sweater.taper_sleeves5(@chest) %></ul>

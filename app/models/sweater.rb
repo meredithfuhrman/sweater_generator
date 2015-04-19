@@ -58,6 +58,9 @@ class Sweater < ActiveRecord::Base
   end
 
   def stitch_count2(swatch, chest)
+    if increase1(swatch, chest) == ""
+      ""
+    else
     stitch_count = [ [64, 70, 72, 78, 80, 82, 86, 90, 94, 98 ],
     [86, 90, 96, 102, 106, 106, 112, 116, 122, 128],
     [108, 112, 120, 128, 134, 136, 142, 150, 154, 162],
@@ -65,6 +68,7 @@ class Sweater < ActiveRecord::Base
     [152, 160, 168, 180, 188, 190, 198, 208, 216, 226] ]
 
     "There will be #{stitch_count[swatch-3][chest/2 - 18]} stitches on the needle."
+    end
   end
 
   def work_even1(chest)
