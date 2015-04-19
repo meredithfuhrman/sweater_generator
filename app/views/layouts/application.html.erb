@@ -2,8 +2,11 @@
 <html>
 <head>
   <title>SweaterGenerator</title>
+  <meta charset="utf-8" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
+  <%= wicked_pdf_javascript_include_tag "number_pages" %>
 </head>
 <body>
 

@@ -13,6 +13,7 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'byebug'
