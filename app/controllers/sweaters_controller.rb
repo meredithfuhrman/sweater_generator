@@ -22,6 +22,26 @@ class SweatersController < ApplicationController
     @chest = @sweater.measurement.chest_circumference
     @pattern = @sweater.pattern.id
     @needles = @sweater.swatch.needle_size
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "sweater_pattern"
+      end
+    end
+  end
+
+  def download
+    @sweater = Sweater.find(params[:id])
+    @swatch = @sweater.swatch.stitches_per_inch
+    @chest = @sweater.measurement.chest_circumference
+    @pattern = @sweater.pattern.id
+    @needles = @sweater.swatch.needle_size
+
+    html = render_to_string "show"
+    pdf = WickedPdf.new.pdf_from_string(html)
+    send_data(pdf,
+      :filename    => "#{@sweater.name}.pdf",
+      :disposition => 'attachment')
   end
 
   protected

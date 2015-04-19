@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :sweaters
   resources :measurements
   resources :swatches
+
+  post '/sweaters/:id/download', to: 'sweaters#download'
 end
