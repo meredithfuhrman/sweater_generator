@@ -6,4 +6,6 @@ class Measurement < ActiveRecord::Base
 
   validates_numericality_of :chest_circumference, less_than_or_equal_to: 54
   validates_numericality_of :chest_circumference, greater_than_or_equal_to: 26
+  validates_numericality_of :chest_circumference, even: true
+
 end

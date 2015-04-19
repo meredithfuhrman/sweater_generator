@@ -1,0 +1,92 @@
+<div class="components">
+  <h4> Components </h4>
+    <p>Gauge: <%= @swatch %> stitches per inch<p><br>
+    <p>Needles: <%= @needles %> US<p><br>
+    <p>Finished Dimension: <%= @chest %>" bust circumference<p><br>
+</div>
+
+<div class="yoke">
+  <h4> Yoke </h4>
+    <ul><%= @sweater.cast_on(@swatch, @chest) %></ul>
+    <ul><%= @sweater.yoke1(@pattern) %></ul>
+    <ul><%= @sweater.yoke2 %></ul>
+    <ul><%= @sweater.stitch_count1(@swatch, @chest) %></ul>
+    <ul><%= @sweater.increase1(@swatch, @chest) %> <%= @sweater.stitch_count2(@swatch, @chest) %></ul>
+    <ul><%= @sweater.work_even1(@chest) %></ul>
+    <ul><%= @sweater.yoke3 %></ul>
+    <ul><%= @sweater.stitch_count3(@swatch, @chest) %></ul>
+    <ul><%= @sweater.work_even2(@chest) %></ul>
+    <ul><%= @sweater.yoke4 %></ul>
+    <ul><%= @sweater.stitch_count4(@swatch, @chest) %></ul>
+    <ul><%= @sweater.work_even3(@chest) %></ul>
+    <ul><%= @sweater.yoke5 %></ul>
+    <ul><%= @sweater.stitch_count5(@swatch, @chest) %></ul>
+    <ul><%= @sweater.work_even4(@chest) %></ul>
+    <ul><%= @sweater.increase2(@swatch, @chest) %> <%= @sweater.stitch_count6(@swatch, @chest) %></ul>
+</div>
+
+<div class="divide">
+  <h4> Divide for Sleeves and Body </h4>
+    <ul><%= @sweater.divide1(@swatch, @chest, @pattern) %></ul>
+    <ul><%= @sweater.waste_yarn1(@swatch, @chest) %></ul>
+    <ul><%= @sweater.cast_on1(@swatch, @chest) %></ul>
+    <ul><%= @sweater.seam1 %></ul>
+    <ul><%= @sweater.divide2(@swatch, @chest, @pattern) %></ul>
+    <ul><%= @sweater.waste_yarn2(@swatch, @chest) %></ul>
+    <ul><%= @sweater.cast_on2(@swatch, @chest) %></ul>
+    <ul><%= @sweater.seam2 %></ul>
+    <ul><%= @sweater.divide3(@swatch, @chest) %></ul>
+    <ul><%= @sweater.stitch_count7(@swatch, @chest) %></ul>
+    <ul><%= @sweater.front_back_count(@swatch, @chest, @pattern) %></ul>
+</div>
+
+<div class="lower_body">
+  <h4> Lower Body </h4>
+    <ul><%= @sweater.lower_body1(@chest) %></ul>
+    <ul><%= @sweater.lower_body2 %></ul>
+    <ul><%= @sweater.lower_body3 %></ul>
+</div>
+
+<div class="sleeves">
+  <h4> Sleeves </h4>
+    <ul><%= @sweater.sleeves1(@swatch, @chest) %></ul>
+    <ul><%= @sweater.sleeves2(@swatch, @chest) %></ul>
+    <ul><%= @sweater.sleeves3 %></ul>
+    <ul><%= @sweater.sleeves4(@swatch, @chest) %></ul>
+    <ul><%= @sweater.sleeves5 %></ul>
+</div>
+
+<div class="taper_sleeves">
+  <h4> Taper Sleeves </h4>
+    <ul><%= @sweater.taper_sleeves1(@swatch, @chest) %></ul>
+    <ul><%= @sweater.taper_sleeves2(@swatch, @chest) %></ul>
+    <ul><%= @sweater.taper_sleeves3(@swatch, @chest) %></ul>
+    <ul><%= @sweater.taper_sleeves4(@swatch, @chest) %></ul>
+    <ul><%= @sweater.taper_sleeves5(@chest) %></ul>
+    <ul><%= @sweater.taper_sleeves6 %></ul>
+    <ul><%= @sweater.taper_sleeves7 %></ul>
+</div>
+
+<div class="neckband">
+  <h4> Neckband </h4>
+    <ul><%= @sweater.neckband1 %></ul>
+    <ul><%= @sweater.neckband2(@pattern) %></ul>
+    <ul><%= @sweater.neckband3 %></ul>
+    <ul><%= @sweater.neckband4 %></ul>
+    <ul><%= @sweater.neckband5 %></ul>
+    <ul><%= @sweater.neckband6 %></ul>
+    <ul><%= @sweater.neckband7 %></ul>
+</div>
+
+<div class="buttonband">
+  <h4> Buttonband </h4>
+    <ul><%= @sweater.buttonband1(@pattern) %></ul>
+    <ul><%= @sweater.buttonband2(@pattern) %></ul>
+    <ul><%= @sweater.buttonband3(@pattern) %></ul>
+    <ul><%= @sweater.buttonband4(@pattern) %></ul>
+</div>
+
+<div class="finishing">
+  <h4> Finishing </h4>
+    <ul><%= @sweater.finishing %></ul>
+</div>

@@ -1,3 +1,29 @@
-<!-- form here -->
+<h5 class="chest_measurement">Pick Chest Measurement</h5>
+<%= form_for @new_measurement do |f| %>
 
-<!-- icons for existing measurements -->
+  <%= f.label :name, 'Sweater Owner\'s Name' %>
+  <%= f.text_field :name %>
+
+  <%= f.label :chest_circumference %>
+  <%= f.select(:chest_circumference, options_for_select([[36, 36], [38, 38],
+  [40, 40], [42, 42], [44, 44], [46, 46], [48, 48], [50, 50],
+  [52, 52], [54, 54]])) %>
+
+  <%= f.submit 'Add Measurement' %>
+<% end %>
+
+<% @measurements.each do |measurement| %>
+  <div>
+    <li>Sweater Owner's Name: <%= measurement.name %></li>
+    <li>Chest Measurement: <%= measurement.chest_circumference %></li>
+  </div>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "Swatches", swatches_path %> <br>
+<% end %>
+<%= link_to "Home", sweaters_path %>
+
+
+
+<!-- Child sizes for chest measurements: [26, 26], [28, 28],[30, 30], [32, 32], [34, 34], -->

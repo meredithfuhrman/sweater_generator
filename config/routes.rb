@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root 'homes#index'
+  root 'sweaters#index'
   devise_for :users
 
+  resources :sweaters
   resources :measurements
+  resources :swatches
 end

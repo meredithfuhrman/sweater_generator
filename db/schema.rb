@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150414172013) do
   end
 
   create_table "swatches", force: :cascade do |t|
+    t.string   "name"
     t.integer  "stitches_per_inch", null: false
     t.string   "needle_size"
     t.integer  "yarn_id"
@@ -38,12 +39,13 @@ ActiveRecord::Schema.define(version: 20150414172013) do
   end
 
   create_table "sweaters", force: :cascade do |t|
-    t.integer  "pattern_id",     null: false
+    t.string   "name"
+    t.integer  "user_id",        null: false
     t.integer  "swatch_id",      null: false
     t.integer  "measurement_id", null: false
-    t.integer  "user_id",        null: false
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "pattern_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,8 +68,8 @@ ActiveRecord::Schema.define(version: 20150414172013) do
 
   create_table "yarns", force: :cascade do |t|
     t.string   "yarn_placeholder"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
