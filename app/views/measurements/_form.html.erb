@@ -1,0 +1,12 @@
+<%= form_for @new_measurement, remote: true do |f| %>
+
+  <%= f.label :name, 'Sweater Owner\'s Name' %>
+  <%= f.text_field :name %>
+
+  <%= f.label :chest_circumference %>
+  <%= f.select(:chest_circumference, options_for_select([[36, 36], [38, 38],
+  [40, 40], [42, 42], [44, 44], [46, 46], [48, 48], [50, 50],
+  [52, 52], [54, 54]])) %>
+
+  <%= f.submit 'Add Measurement' %>
+<% end %>

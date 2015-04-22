@@ -8,24 +8,28 @@
 </head>
 <body>
 
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">SweaterGenerator</a></h1>
-      </li>
-    </ul>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="nav-bar right">
+     <ul class="button-group">
+       <li><%= link_to 'Sweaters', sweaters_path, class: "button" %></li>
+       <li><%= link_to 'Swatches', swatches_path, class: "button" %></li>
+       <li><%= link_to 'Measurements', measurements_path, class: "button" %></li>
 
-    <section class="top-bar-section">
-      <ul class="right">
-        <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
+       <%- if current_user -%>
+       <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "button" %></li>
+       <li><%= link_to 'Edit Profile', edit_user_registration_path, class: "button" %></li>
+
+       <%- else -%>
+       <li><%= link_to 'Sign Up', new_user_registration_path, class: "button" %></li>
+       <li><%= link_to 'Sign In', new_user_session_path, class: "button" %></li>
+       <%- end -%>
       </ul>
-    </section>
-  </nav>
+    </div>
+    <h1>Logo</h1>
+    <hr/>
+  </div>
+</div>
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
@@ -38,23 +42,16 @@
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
 
-  <footer class="row">
-    <div class="large-12 columns">
-      <hr>
-      <div class="row">
-        <div class="large-6 columns">
-          <p>© Copyright no one at all. Go to town.</p>
-        </div>
-        <div class="large-6 columns">
-          <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-          </ul>
+  <footer class="row" id="footer_margin">
+      <div class="large-12 columns">
+        <hr/>
+        <div class="row">
+          <div class="large-12 columns">
+            © Meredith Fuhrman ||
+            <%= link_to 'github.com/meredithfuhrman', "https://github.com/meredithfuhrman", :target => "_blank" %>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 </body>
 </html>

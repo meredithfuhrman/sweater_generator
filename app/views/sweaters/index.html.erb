@@ -1,16 +1,43 @@
-<%= form_for @new_sweater do |f| %>
+<div class="row">
+  <div class="large-12 columns">
+    <img src="http://placehold.it/1000x500&text=[banner img]">
+  </div>
+</div>
 
-  <%= f.label :name, 'Sweater Name' %>
-  <%= f.text_field :name %>
+<div class="row">
+  <hr>
+  <div class="large-8 columns">
+    <h4>Create a Sweater</h4>
+    <%= form_for @new_sweater do |f| %>
 
-  <%= f.collection_select(:swatch_id, Swatch.all, :id, :name, { :prompt => 'Select a Swatch' }, :required => true ) %>
-  <%= f.collection_select(:measurement_id, Measurement.all, :id, :name, { :prompt => 'Select a Measurement' }, :required => true ) %>
-  <%= f.collection_select(:pattern_id, Pattern.all, :id, :pattern_type, { :prompt => 'Select a Pattern' }, :required => true ) %>
+      <%= f.label :name, 'Sweater Name' %>
+      <%= f.text_field :name %>
 
-  <%= f.submit 'Create Sweater' %>
-<% end %>
+      <%= f.collection_select(:swatch_id, Swatch.all, :id, :name, { :prompt => 'Select a Swatch' }, :required => true ) %>
+      <%= f.collection_select(:measurement_id, Measurement.all, :id, :name, { :prompt => 'Select a Measurement' }, :required => true ) %>
+      <%= f.collection_select(:pattern_id, Pattern.all, :id, :pattern_type, { :prompt => 'Select a Pattern' }, :required => true ) %>
 
-<% if user_signed_in? %>
-  <%= link_to "Swatches", swatches_path %> <br>
-  <%= link_to "Measurements", measurements_path %>
-<% end %>
+      <%= f.submit 'Create Sweater' %>
+    <% end %>
+  </div>
+  <div class="large-4 columns">
+    <%= render "./swatches/form" %>
+    <%= render "./measurements/form" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <h4>Patterns</h4>
+    <% @sweaters.each do |sweater| %>
+      <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4" data-clearing>
+        <div>
+          <li>Sweater Name: <%= sweater.name %></li>
+          <li>Swatch: <%= sweater.swatch_id %></li>
+          <li>Pattern: <%= sweater.pattern_id %></li>
+          <%= link_to "Delete", sweater_path(sweater), method: :delete %>
+        </div>
+      </ul>
+    <% end %>
+  </div>
+</div>
