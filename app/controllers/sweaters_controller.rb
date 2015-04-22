@@ -2,6 +2,8 @@ class SweatersController < ApplicationController
   def index
     @sweaters = Sweater.all
     @new_sweater = Sweater.new
+    @new_swatch = Swatch.new
+    @new_measurement = Measurement.new
   end
 
   def create
@@ -28,6 +30,12 @@ class SweatersController < ApplicationController
         render pdf: "sweater_pattern"
       end
     end
+  end
+
+  def destroy
+    Sweater.find(params[:id]).destroy
+    flash[:notice] = "Sweater Deleted"
+    redirect_to sweaters_path
   end
 
   def download

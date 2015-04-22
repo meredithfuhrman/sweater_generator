@@ -7,12 +7,25 @@ class SwatchesController < ApplicationController
   def create
     @swatch = Swatch.create(swatch_params)
     if @swatch.save
-      flash[:notice] = "Swatch added!"
-      redirect_to swatches_path
+      respond_to do |format|
+        format.html do
+          flash[:notice] = "Swatch added!"
+          redirect_to swatches_path
+        end
+        format.js do
+          render :create
+        end
+      end
     else
       flash[:notice] = "Try again"
       redirect_to :back
     end
+  end
+
+  def destroy
+    Swatch.find(params[:id]).destroy
+    flash[:notice] = "Swatch Deleted"
+    redirect_to swatches_path
   end
 
   protected
