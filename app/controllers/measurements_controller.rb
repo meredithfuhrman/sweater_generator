@@ -22,6 +22,21 @@ class MeasurementsController < ApplicationController
     end
   end
 
+  def edit
+    @measurement = Measurement.find(params[:id])
+  end
+
+  def update
+    @measurement = Measurement.find(params[:id])
+    if @measurement.update_attributes(measurement_params)
+      flash[:notice] = "Swatch Updated!"
+      redirect_to measurements_path
+    else
+      flash[:notice] = "Try again"
+      redirect_to :back
+    end
+  end
+
   def destroy
     Measurement.find(params[:id]).destroy
     flash[:notice] = "Measurement Deleted"

@@ -32,6 +32,21 @@ class SweatersController < ApplicationController
     end
   end
 
+  def edit
+    @sweater = Sweater.find(params[:id])
+  end
+
+  def update
+    @sweater = Sweater.find(params[:id])
+    if @sweater.update_attributes(sweater_params)
+      flash[:notice] = "Swatch Updated!"
+      redirect_to sweaters_path
+    else
+      flash[:notice] = "Try again"
+      redirect_to :back
+    end
+  end
+
   def destroy
     Sweater.find(params[:id]).destroy
     flash[:notice] = "Sweater Deleted"

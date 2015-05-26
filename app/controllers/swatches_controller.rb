@@ -22,6 +22,21 @@ class SwatchesController < ApplicationController
     end
   end
 
+  def edit
+    @swatch = Swatch.find(params[:id])
+  end
+
+  def update
+    @swatch = Swatch.find(params[:id])
+    if @swatch.update_attributes(swatch_params)
+      flash[:notice] = "Swatch Updated!"
+      redirect_to swatches_path
+    else
+      flash[:notice] = "Try again"
+      redirect_to :back
+    end
+  end
+
   def destroy
     Swatch.find(params[:id]).destroy
     flash[:notice] = "Swatch Deleted"

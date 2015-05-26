@@ -1,0 +1,11 @@
+<%= form_for @sweater do |f| %>
+
+  <%= f.label :name, 'Sweater Name' %>
+  <%= f.text_field :name %>
+
+  <%= f.collection_select(:swatch_id, Swatch.all, :id, :name, { :prompt => 'Select a Swatch' }, :required => true ) %>
+  <%= f.collection_select(:measurement_id, Measurement.all, :id, :name, { :prompt => 'Select a Measurement' }, :required => true ) %>
+  <%= f.collection_select(:pattern_id, Pattern.all, :id, :pattern_type, { :prompt => 'Select a Pattern' }, :required => true ) %>
+
+  <%= f.submit 'Update Sweater' %>
+<% end %>

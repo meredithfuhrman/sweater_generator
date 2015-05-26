@@ -1,9 +1,14 @@
-<% @measurements.each do |measurement| %>
-  <div>
-    <li>Sweater Owner's Name: <%= measurement.name %></li>
-    <li>Chest Measurement: <%= measurement.chest_circumference %></li>
-    <%= link_to "Delete", measurement_path(measurement), method: :delete %> <br>
+<div class="row">
+  <div class="large-12 columns">
+  <% @measurements.each do |measurement| %>
+    <div class="large-4 small-6 columns">
+    <div class="panel">    <li>Sweater Owner's Name: <%= measurement.name %></li>
+      <li>Chest Measurement: <%= measurement.chest_circumference %></li>
+      <%= link_to "Edit", edit_measurement_path(measurement) %>
+      <%= link_to "Delete", measurement_path(measurement), method: :delete %> <br>
+    </div>
+    </div>
+  <% end %>
   </div>
-<% end %>
-
+</div>
 <!-- Child sizes for chest measurements: [26, 26], [28, 28],[30, 30], [32, 32], [34, 34], -->

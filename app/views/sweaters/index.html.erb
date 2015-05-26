@@ -21,7 +21,11 @@
     <% end %>
   </div>
   <div class="large-4 columns">
+
+    <input type="button" name="new-swatch-button" value="Add a swatch" />
     <%= render "./swatches/form" %>
+
+    <input type="button" name="new-measurement-button" value="Add a measurement" />
     <%= render "./measurements/form" %>
   </div>
 </div>
@@ -30,12 +34,14 @@
   <div class="large-12 columns">
     <h4>Patterns</h4>
     <% @sweaters.each do |sweater| %>
-      <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4" data-clearing>
-        <div>
-          <li>Sweater Name: <%= sweater.name %></li>
-          <li>Swatch: <%= sweater.swatch_id %></li>
-          <li>Pattern: <%= sweater.pattern_id %></li>
-          <%= link_to "Delete", sweater_path(sweater), method: :delete %>
+        <div class="large-4 small-6 columns">
+          <div class="panel">
+            <li>Sweater Name: <%= sweater.name %></li>
+            <li>Swatch: <%= sweater.swatch_id %></li>
+            <li>Pattern: <%= sweater.pattern_id %></li>
+            <%= link_to "Edit", edit_sweater_path(sweater) %>
+            <%= link_to "Delete", sweater_path(sweater), method: :delete %>
+          </div>
         </div>
       </ul>
     <% end %>

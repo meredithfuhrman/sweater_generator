@@ -1,8 +1,15 @@
-<% @swatches.each do |swatch| %>
-  <div>
-    <li>Swatch Name: <%= swatch.name %></li>
-    <li>Stitches Per Inch: <%= swatch.stitches_per_inch %></li>
-    <li>Needle Size: <%= swatch.needle_size %></li>
-    <%= link_to "Delete", swatch_path(swatch), method: :delete %> <br>
+<div class="row">
+  <div class="large-12 columns">
+  <% @swatches.each do |swatch| %>
+  <div class="large-4 small-6 columns">
+    <div class="panel">
+      <li>Swatch Name: <%= swatch.name %></li>
+      <li>Stitches Per Inch: <%= swatch.stitches_per_inch %></li>
+      <li>Needle Size: <%= swatch.needle_size %></li>
+      <%= link_to "Edit", edit_swatch_path(swatch) %>
+      <%= link_to "Delete", swatch_path(swatch), method: :delete %>
+    </div>
   </div>
-<% end %>
+  <% end %>
+  </div>
+</div>
